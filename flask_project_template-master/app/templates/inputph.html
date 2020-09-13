@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block css %}
+
+{% endblock %}
+{% block body %}
+<div class="container-fluid " style="background-size: 100%;">
+     <div class="row">
+         <div class="col-lg-12 col-sm-9 mt-5 ml-0 mb-5">
+            {% include "notify.html" %}
+            <div class="card-group">
+ 
+                <div class="card">
+                   <img src="\static\image\ph.jpg" style="height:400px;" class="card-img-top" alt="image not found">
+                   <div class="card-body">
+                     <h4 class="card-title">pH SENSOR</h4>
+                     <p class="card-text"> Soil pH is considered a master variable in soils as it affects
+                          many chemical processes. It specifically affects plant nutrient availability by 
+                          controlling the chemical forms of the different nutrients and influencing the chemical 
+                          reactions they undergo. The optimum pH range for most plants is between 5.5 and 7.5 however,
+                          many plants have adapted to thrive at pH values outside this range.
+                     </p>
+                    <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                   </div>
+                </div>
+               
+
+             <div class="card">
+                 <div class="card-header">
+                    <div class="display-4">Prediction System</div>
+                    <p class="lead">predict pH-level from pH sensor</p>
+                 </div>
+                 <div class="card-body">
+                     <form method='post'> 
+                        <div class="form-group">
+                            <label for="mos">pH-level</label>
+                            <div class="form-group">
+                              <label for="mosi_id">showing in the box</label>
+                              <textarea class="form-control" name="mosi_id" id="mosi_id" placeholder="mositure id"></textarea>
+                              <label for="ph">pH percentage</label>
+                              <textarea class="form-control" name="ph" id="ph" placeholder="mositure in percentage"></textarea>
+                              <label for="densy">soil density</label>
+                              <textarea class="form-control" name="densy" id="densy" placeholder="soil density"></textarea>
+                            </div>
+                            <!--<div class="form-group">
+                              <label for="mositure_per"></label>
+                                <textarea class="form-control" name="mositure_per" id="mositure_per" placeholder="mositure in percent">
+                            </div>
+                            <small id="msghelp" class="form-text text-muted">enter valid data</small> -->
+                        </div>
+                          <div class="form-group">
+                              <button  class="btn btn-success btn-lg">SAVE</button>
+                          </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>
+{% endblock %}
+

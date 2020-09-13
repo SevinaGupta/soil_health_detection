@@ -1,0 +1,63 @@
+<html>
+  <head>
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:rgb(94, 23, 100);">
+    <a class="navbar-brand" href="{{url_for('index')}}"></a>
+    <button class="navbar-toggler hidden-lg-up fixed-top" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu"
+        aria-expanded="false" aria-label="Toggle digipodum nav"><i class="fas fa-bars"></i></button>
+    <div class="collapse navbar-collapse" id="mainmenu">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 mx-auto ">
+        <li class="nav-item ">
+          <a class="nav-link text-uppercase" href="{{url_for('index')}}"><i class="fas fa-home "></i> Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="/input">   get mositure</a>
+        </li>
+        <li>
+          <a class="nav-link text-uppercase" href="inputph">   get ph level</a>
+        </li>
+        <li>
+          <a class="nav-link text-uppercase" href="/about">   About</a>
+        </li>
+        {% if current_user.is_anonymous %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-uppercase" href="#" id="dropdownId" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i> Account</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <a class="dropdown-item" href="/login">Login</a>
+            <a class="dropdown-item" href="/register">Create free account</a>
+          </div>
+        </li>
+        {% else %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
+          aria-haspopup="true" aria-expanded="false">
+            <img src="{{ current_user.avatar(24) }}" class="rounded-circle">  {{current_user.username}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{url_for('user',username=current_user.username)}}">Profile</a>
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+        </li>
+        {% endif %}
+        <li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<script src="js/jquery-1.11.2.min.js"script></script>
+<script src="js/bootstrap.min.js"  script></script>
+  </body>
+</html>
